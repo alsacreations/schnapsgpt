@@ -1,0 +1,292 @@
+html {
+  height: 100vh;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #343541;
+  height: 100vh;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+/* https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-bottom: 9rem; /* Espace pour la zone du bas */
+  overflow-x: hidden;
+  min-width: 100%;
+}
+
+.intro {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.intro .wtf {
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  max-width: 80%;
+}
+
+@media (max-width: 750px) {
+  .intro .wtf {
+    flex-direction: column;
+  }
+}
+
+.intro .bloc {
+  flex: 1 1 0;
+  justify-content: end;
+}
+
+.intro .bloc-explain {
+  border-radius: 0.5rem;
+  background-color: #3e3f4b;
+  padding: 0.25rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.intro .bloc .bloc-title {
+  font-size: 1.5rem;
+}
+
+.intro .bloc .bloc-text {
+  font-size: 1rem;
+}
+
+/* 3 icônes */
+.intro .bloc img {
+  max-width: 3rem;
+  max-height: 3rem;
+}
+
+.intro .logo {
+  max-width: 20rem;
+  margin-bottom: 2rem;
+}
+
+.schnapsResponse {
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.sendButton {
+  background: 0;
+  border: 0;
+  transform: rotate(270deg);
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.footer {
+  margin-top: 7rem;
+}
+
+.schnapsForm {
+  width: 100%;
+  display: flex;
+  margin-top: auto;
+  flex-grow: 1;
+  border-radius: 5px;
+  background-color: #40414f;
+  align-items: center;
+  justify-content: center;
+  /* height: 1rem; */
+  /* padding: 1rem; */
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 15px 0;
+}
+
+.mentions {
+  margin: 1rem 0 2rem 0;
+  font-size: 12px;
+}
+
+.mentions,
+.mentions a {
+  color: hsla(0, 0%, 100%, .5);
+}
+
+.schnapsQuestion {
+  width: 95%;
+  color: #fff;
+  font-size: 16px;
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.sendButton {
+  padding: 1rem;
+}
+
+.queryContainer,
+.answerContainer {
+  background: rgba(68, 70, 84, 1);
+  padding: 1rem;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-family: monospace;
+}
+
+/* Paragraphes de réponses */
+.queryContainer p,
+.answerContainer p,
+.queryContainer a,
+.answerContainer a {
+  color: #fff;
+}
+
+/* Avatars */
+.queryContainer .avatar,
+.answerContainer .avatar {
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 1rem;
+  float: left;
+}
+
+/* Avatar de la question */
+.queryContainer .avatar {
+  background: #A8C433;
+  border-radius: 4px;
+  text-align: center;
+  display: inline-block;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin-top: 0.25rem;
+  font-variant: small-caps;
+  font-size: 14px;
+}
+
+.queryContainer {
+  background-color: rgba(52, 53, 65, 1);
+}
+
+.query {
+  display: block;
+  color: #d1d5db;
+  font-size: smaller;
+  margin: 1em;
+}
+
+/* Réponse */
+.answer {
+  font-size: smaller;
+  /* border-right: 0.75em solid #d1d5db; */
+  margin: 1em;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  color: #d1d5db;
+}
+
+.schnapsQuestion {
+  background: transparent;
+  border: none;
+}
+
+.schnapsQuestion:focus {
+  outline: none;
+}
+
+/*
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+*/
+
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.sendButton {
+  rotate: 90deg;
+  color: rgba(172, 172, 190, 1);
+  cursor: pointer;
+}
+
+.dots {
+  display: none;
+}
+
+/* Animation */
+
+.type {
+  color: #0000;
+  background:
+    linear-gradient(-90deg, #FFFFFF 10px, #0000 0) 20px 0, /* carret */
+    linear-gradient(#EEEEEE 0 0) 0 0; /* text */
+  background-size: calc(var(--n)*1ch) 200%;
+  -webkit-background-clip: padding-box,text;
+  background-clip: padding-box,text;
+  background-repeat: no-repeat;
+  animation: 
+    b .7s infinite steps(1),   
+    t calc(var(--n)*.04s) steps(var(--n)) forwards;
+}
+
+@keyframes t{
+  from {background-size:0 200%}
+}
+@keyframes b{
+  50% {background-position:0 -100%,0 0}
+}
